@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+const slug = require('slug');
 const csv = require('csv');
 
 const csvText = fs.readFileSync(__dirname + '/data.csv', 'utf8');
@@ -190,6 +191,13 @@ const groupings = [
   }
 ];
 
+const BASIC_DATA_PICKERS = [
+  {
+    property: 'name',
+    question: 'Qual o nome da organização da qual faz parte?',
+  }
+];
+
 function findGroupingForValue(value) {
   return groupings.find(function (g) {
     return g.options.find(function (opt) {
@@ -205,7 +213,16 @@ function findOptionDetail(grouping, optionValue) {
 }
 
 function Entity(columnNames, line) {
-    
+  // basic data
+  
+  BASIC_DATA_PICKERS.forEach((picker) => {
+    columnNames.forEach((colName, index) => {
+      if (picker.question === colName) {
+        this[picker.property] = line[index]
+      }
+    })
+  });
+  
   // find groupings (colNames are values actually)
   columnNames.forEach((colName, index) => {
     if (line[index]) {
@@ -233,6 +250,78 @@ var parser = csv.parse(csvText, function (err, data) {
     return entity;
 
   });
+  
+  // partial data parsing ended
+  // console.log(entities[0]);
+  
+  var nodes = [];
+  
+  
+  // parsing the entities data into data like the
+  // one for the readme-flare.json
+  // example of d3 chord.
+  entities.forEach(function (entity) {
+    
+    nodes.push({
+      name: 'entity.' + slug(entity.name),
+      imports: parseEntityImports(entity),
+      
+      // for test
+      size: 1,
+    });
+    
+  });
+  
+  // build the 'option' nodes
+  groupings.forEach(function (g) {
+    var groupName = g.name;
+    
+    g.options.forEach(function (opt) {
+      nodes.push({
+        name: groupName + '.' + opt.name
+      });
+    });
+  });
+  
+  // console.log(nodes[0]);
+  console.log(JSON.stringify(nodes));
 
-  console.log(entities[0]);
 });
+
+// parses out entity imports
+function parseEntityImports(entity) {
+  var imports = [];
+  
+  groupings.forEach(function (g) {
+    
+    var gName = g.name;
+    
+    if (entity[gName]) {
+      entity[gName].forEach(function (opt) {
+        imports.push(gName + '.' + opt.name);
+      });
+    }
+  });
+  
+  return imports;
+  
+  // if (entity.financiamento) {
+  //   entity.financiamento.forEach(function (fin) {
+  //     imports.push('financiamento.' + fin.name);
+  //   });
+  // }
+  
+  // if (entity.abordagem) {
+  //   entity.abordagem.forEach(function (abord) {
+  //     imports.push('abordagem.' + abord.name);
+  //   });
+  // }
+  
+  // if (entity.escopo) {
+  //   entity.escopo.forEach(function (es) {
+  //     imports.push('escopo.' + es.name);
+  //   });
+  // }
+  
+  // return imports;
+}
