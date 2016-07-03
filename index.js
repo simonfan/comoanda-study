@@ -303,6 +303,12 @@ function writeUIFiles(entities) {
     optionWhitelist: allOptions
   });
   
+  // filter out versions with less than three options views
+  versions = versions.filter(function (v) {
+    return v.optionWhitelist.length > 3;
+  })
+  
+  fse.emptyDirSync(VERSION_BASE_PATH);
   
   versions.forEach(function (v) {
     var versionName = v.name || v.optionWhitelist.join('-');
