@@ -353,8 +353,10 @@ function genImportLikeData(entities, optionWhitelist) {
   entities.forEach(function (entity) {
     
     nodes.push({
-      name: 'entity.' + slug(entity.name),
+      name: 'entity.' + entity.estado + '.' + slug(entity.name),
       imports: parseEntityImports(entity, optionWhitelist),
+      
+      estado: entity.estado,
     });
     
   });

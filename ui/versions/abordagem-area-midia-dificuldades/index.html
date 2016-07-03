@@ -101,6 +101,8 @@ d3.json("data.json", function(error, classes) {
         if (typeof d.count !== 'undefined') {
           var percentage = Math.round((d.count / d.totalEntityCount) * 100);
           return d.key + ' (' + percentage + '%)';
+        } else if (d.estado) {
+          return d.key + ' (' + d.estado + ')';
         } else {
           return d.key;
         }
