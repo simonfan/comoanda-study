@@ -88,14 +88,23 @@ d3.json("data.json", function(error, classes) {
     .enter().append("path")
       .each(function(d) { d.source = d[0], d.target = d[d.length - 1]; })
       .attr("class", "link")
-      .attr("d", line);
+      .attr("d", function (d, i) {
+        console.log(d,i);
+        return line(d, i);
+      });
 
   node = node
       .data(nodes.filter(function(n) { return !n.children; }))
     .enter().append("text")
       .attr("class", "node")
       .attr("dy", ".31em")
-      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
+      .attr("transform", function(d) {
+        return [
+          "rotate(" + (d.x - 90) + ")",
+          "translate(" + (d.y + 8) + ",0)",
+          (d.x < 180 ? "" : "rotate(180)")
+        ].join('');
+      })
       .style("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
       .text(function(d) {
         if (typeof d.count !== 'undefined') {

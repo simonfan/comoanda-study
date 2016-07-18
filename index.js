@@ -208,6 +208,10 @@ const BASIC_DATA_PICKERS = [
     property: 'cidade',
     question: 'Cidade:',
   },
+  {
+    property: 'ano',
+    question: 'Quando sua organização surgiu?',
+  }
   
 ];
 
@@ -264,11 +268,9 @@ var parser = csv.parse(csvText, function (err, data) {
 
   });
   
-  // partial data parsing ended
   // console.log(entities[0]);
-  
-  
-  writeUIFiles(entities);
+
+  console.log(JSON.stringify(entities, null, '\t'));
 });
 
 /**
@@ -286,16 +288,17 @@ function writeUIFiles(entities) {
   });
   
   // combine all possible whitelists
-  var versions = combinations(allOptions)
-    .filter(function (comb) {
-      // console.log(comb)
-      return comb.length > 0;
-    })
-    .map(function (comb) {
-      return {
-        optionWhitelist: comb,
-      }
-    });
+  var versions = [];
+  // var versions = combinations(allOptions)
+  //   .filter(function (comb) {
+  //     // console.log(comb)
+  //     return comb.length > 0;
+  //   })
+  //   .map(function (comb) {
+  //     return {
+  //       optionWhitelist: comb,
+  //     }
+  //   });
   
   // special version named 'all'
   versions.unshift({
@@ -304,9 +307,9 @@ function writeUIFiles(entities) {
   });
   
   // filter out versions with less than three options views
-  versions = versions.filter(function (v) {
-    return v.optionWhitelist.length > 3;
-  })
+  // versions = versions.filter(function (v) {
+  //   return v.optionWhitelist.length > 6;
+  // })
   
   fse.emptyDirSync(VERSION_BASE_PATH);
   

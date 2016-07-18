@@ -1,392 +1,422 @@
 module.exports = [
   {
-    name: 'abordagem',
-    question: 'Qual a abordagem da sua organização sobre o tema da mobilidade a pé?',
+    _id: 'abordagem',
+    value: 'Abordagem',
+    _value: 'Qual a abordagem da sua organização sobre o tema da mobilidade a pé?',
     options: [
       {
-        name: 'comunicacao',
+        _id: 'comunicacao',
         value: 'Comunicação e Informação [produção e compartilhamento: sites, blogs, grupos de discussão virtual]'
       },
       {
-        name: 'educacao',
+        _id: 'educacao',
         value: 'Educação e Cultura [disseminação, capacitação, intervenção artística, sensibilização]'
       },
       {
-        name: 'intervencao',
+        _id: 'intervencao',
         value: 'Intervenção física no espaço [obra civil, intervenções temporárias, artísticas]'
       },
       {
-        name: 'legislacao',
+        _id: 'legislacao',
         value: 'Legislação e Políticas Públicas [produção e revisão de leis, planos e programas relacionados à mobilidade a pé]'
       },
       {
-        name: 'mobilizacao',
+        _id: 'mobilizacao',
         value: 'Mobilização [ativismo, participação, engajamento e controle social]',
       },
       {
-        name: 'pesquisa',
+        _id: 'pesquisa',
         value: 
       'Pesquisa [diagnóstico, caracterização, indicadores]',
       },
       {
-        name: 'projetos',
+        _id: 'projetos',
         value: 'Projetos e Planos [projetos de arquitetura, desenho urbano, planos de mobilidade, diretores]'
       },
       
       // we'll ignore other for now because
       // it has the same value accross groupings
       // {
-      //   name: 'other',
+      //   _id: 'other',
       //   value: 'Other',
       // }
     ]
   },
   
   {
-    name: 'area',
-    question: '[review ] qual area',
+    _id: 'area',
+    value: 'Área de atuação',
+    _value: 'Qual é a área de atuação da sua organização?',
     options: [
       {
-        name: 'arquitetura',
+        _id: 'arquitetura',
         value: 'Arquitetura e urbanismo'
       },
       {
-        name: 'comunicacao',
+        _id: 'comunicacao',
         value: 'Comunicação',
       },
       {
-        name: 'direito',
+        _id: 'direito',
         value: 'Direito'
       },
       {
-        name: 'educacao',
+        _id: 'educacao',
         value: 'Educação',
       },
       {
-        name: 'engenharia',
+        _id: 'engenharia',
         value: 'Engenharia',
       },
       {
-        name: 'meio-ambiente',
+        _id: 'meio-ambiente',
         value: 'Meio ambiente'
       },
       {
-        name: 'politica-publica',
+        _id: 'politica-publica',
         value: 'Políticas públicas',
       },
       {
-        name: 'saude',
+        _id: 'saude',
         value: 'Saúde e qualidade de vida',
       },
       // {
-      //   name: 'other',
+      //   _id: 'other',
       //   value: 'Other',
       // }
     ]
   },
   
   {
-    name: 'escopo',
-    question: 'escopo de atuacao?',
+    _id: 'escala',
+    value: 'Escala de atuação',
+    _value: 'Para qual(is) escala(s) as ações da sua organização estão direcionadas?',
     options: [
       {
-        name: 'bairro',
+        _id: 'bairro',
         value: 'Bairro / comunidade',
       },
       {
-        name: 'cidade',
+        _id: 'cidade',
         value: 'Cidade',
       },
       {
-        name: 'metropole',
+        _id: 'metropole',
         value: 'Regiões Metropolitanas (várias cidades)'
       },
       {
-        name: 'estado',
+        _id: 'estado',
         value: 'Estado',
       },
       {
-        name: 'regional',
+        _id: 'regional',
         value: 'Vários Estados / Regional'
       },
       {
-        name: 'nacional',
+        _id: 'nacional',
         value: 'Nacional',
       },
       {
-        name: 'internacional',
+        _id: 'internacional',
         value: 'Internacional'
       }
     ]
   },
   
   {
-    name: 'financiamento',
-    question: 'financiamento ?',
+    _id: 'financiamento',
+    value: 'Fontes de financiamento',
+    _value: 'Quais são as fontes de recurso da sua organização?',
     options: [
       {
-        name: 'bolsa-de-fomento',
+        _id: 'bolsa-de-fomento',
         value: 'Bolsa de fomento'
       },
       {
-        name: 'convenio',
+        _id: 'convenio',
         value: 'Convênio (poder público)',
       },
       {
-        name: 'doacao-direta-filantropia',
+        _id: 'doacao-direta-filantropia',
         value: 'Doação direta (Investimento social/filantrópico)'
       },
       {
-        name: 'doacao-direta-membros',
+        _id: 'doacao-direta-membros',
         value: 'Doação direta (membros associados)',
       },
       {
-        name: 'edital',
+        _id: 'edital',
         value: 'Edital'
       },
       {
-        name: 'crowdfunding',
+        _id: 'crowdfunding',
         value: 'Financiamento coletivo (crowdfunding)',
       },
       {
-        name: 'lei-de-incentivo',
+        _id: 'lei-de-incentivo',
         value: 'Leis de incentivo (ex. Lei de incentivo ao esporte)',
       },
       {
-        name: 'orcamento-publico',
+        _id: 'orcamento-publico',
         value: 'Orçamento Público'
       },
       {
-        name: 'patrocinio',
+        _id: 'patrocinio',
         value: 'Patrocínio (investimento empresarial)',
       },
       {
-        name: 'prestacao-de-servico',
+        _id: 'prestacao-de-servico',
         value: 'Prestação de serviço',
       },
       {
-        name: 'voluntario',
+        _id: 'voluntario',
         value: 'Trabalho voluntário',
       },
       {
-        name: 'venda-de-produtos',
+        _id: 'venda-de-produtos',
         value: 'Venda de produtos',
       },
       {
-        name: 'nenhuma',
+        _id: 'nenhuma',
         value: 'Nenhuma fonte de financiamento'
       },
       // {
-      //   name: 'other',
+      //   _id: 'other',
       //   value: 'Other'
       // }
     ]
   },
   
   {
-    name: 'remuneracao',
+    _id: 'remuneracao',
+    value: 'Remuneração dos membros',
+    _value: 'Os membros da organização são:',
     options: [
       {
-        name: 'integral',
+        _id: 'integral',
         value: 'Remunerados integralmente',
       },
       {
-        name: 'parcial',
+        _id: 'parcial',
         value: 'Remunerados parcialmente',
       },
       {
-        name: 'nao-remunerados',
+        _id: 'nao-remunerados',
         value: 'Não remunerados'
       }
     ]
   },
   
   {
-    name: 'midia',
+    _id: 'midia',
+    value: 'Ferramentas de comunicação',
+    _value: 'Quais são as ferramentas utilizadas regularmente por sua organização para fins de divulgação e comunicação?',
     options: [
       {
-        name: 'assessoria-de-imprensa',
+        _id: 'assessoria-de-imprensa',
         value: 'Assessoria de Imprensa',
       },
       {
-        name: 'congressos-e-seminarios',
+        _id: 'congressos-e-seminarios',
         value: 'Congressos e Seminários',
       },
       {
-        name: 'email',
+        _id: 'email',
         value: 'E-mail / mailing / newsletter',
       },
       {
-        name: 'facebook',
+        _id: 'facebook',
         value: 'Facebook'
       },
       {
-        name: 'linkedin',
+        _id: 'linkedin',
         value: 'LinkedIn'
       },
       {
-        name: 'jornal',
+        _id: 'jornal',
         value: 'Jornal'
       },
       {
-        name: 'publicacao-cientifica',
+        _id: 'publicacao-cientifica',
         value: 'Publicação científica'
       },
       {
-        name: 'radio',
+        _id: 'radio',
         value: 'Rádio',
       },
       {
-        name: 'revista',
+        _id: 'revista',
         value: 'Revista'
       },
       {
-        name: 'site',
+        _id: 'site',
         value: 'Site'
       },
       {
-        name: 'tv',
+        _id: 'tv',
         value: 'TV'
       },
       {
-        name: 'twitter',
+        _id: 'twitter',
         value: 'Twitter'
       },
       {
-        name: 'youtube',
+        _id: 'youtube',
         value: 'YouTube'
       }
     ]
   },
   {
-    name: 'objeto-de-atuacao',
+    _id: 'aspectos-da-mobilidade',
+    value: 'Aspectos da mobilidade',
+    _value: 'Com quais aspectos da mobilidade a pé sua organização trabalha ou como o tema está inserido na sua atuação?',
     options: [
       {
-        name: 'arquitetura-da-edificacao',
+        _id: 'arquitetura-da-edificacao',
         value: 'Arquitetura da edificação [interface entre espaço público e lote privado; projeto na infraestrutura para mobilidade a pé]',
       },
       {
-        name: 'bicicleta',
+        _id: 'bicicleta',
         value: 'Bicicleta [convívio entre mobilidade cicloviária e mobilidade a pé]',
       },
       {
-        name: 'economia',
+        _id: 'economia',
         value: 'Economia [impactos da mobilidade na economia; geração de emprego; análise de trade-off; fomento ao comércio local]'
       },
       {
-        name: 'infraestrutura',
+        _id: 'infraestrutura',
         value: 'Infraestrutura local [calçadas, cruzamentos, escadarias, passarelas, passagens subterrâneas, travessias, sinalização, mobiliário urbano]',
       },
       {
-        name: 'meio-ambiente',
+        _id: 'meio-ambiente',
         value: 'Meio ambiente e sustentabilidade [mudanças climáticas, energia, emissão de gases, poluição, economia sustentável]'
       },
       {
-        name: 'microacessibilidade',
+        _id: 'microacessibilidade',
         value: 'Microacessibilidade ao Transporte Público Coletivo [conectividade, intermodalidade]',
       },
       {
-        name: 'planejamento-urbano',
+        _id: 'planejamento-urbano',
         value: 'Planejamento e desenho urbano [uso e ocupação do solo, infraestrutura de transporte, planejamento na escala do bairro/cidade]',
       },
       {
-        name: 'saude-e-qualidade-de-vida',
+        _id: 'saude-e-qualidade-de-vida',
         value: 'Saúde e Qualidade de Vida [sedentarismo e doenças relacionadas, como obesidade, diabetes; problemas respiratórios; estresse e depressão]',
       },
       {
-        name: 'seguranca',
+        _id: 'seguranca',
         value: 'Segurança [pessoal, viária e acidentalidade vertical]'
       },
       {
-        name: 'tecnologia-e-inovacao',
+        _id: 'tecnologia-e-inovacao',
         value: 'Tecnologia e Inovação [aplicativos, rede e plataforma online, base de dados]'
       }
     ]
   },
   {
-    name: 'dificuldades',
+    _id: 'dificuldades',
+    value: 'Principais dificuldades',
+    _value: 'Quais são as principais dificuldades que sua organização encontra para trabalhar com o tema da mobilidade a pé?',
     options: [
       {
-        name: 'acesso-a-info',
+        _id: 'acesso-a-info',
         value: 'Acesso a informações',
       },
       {
-        name: 'apoio-politico',
+        _id: 'apoio-politico',
         value: 'Apoio político',
       },
       {
-        name: 'financiamento',
+        _id: 'financiamento',
         value: 'Ausência / escassez de recursos / financiamento',
       },
       {
-        name: 'burocracia',
+        _id: 'burocracia',
         value: 'Burocracia / meios legais de atuar'
       },
       {
-        name: 'capacitacao',
+        _id: 'capacitacao',
         value: 'Capacitação da equipe',
       },
       {
-        name: 'escassez-de-parcerias',
+        _id: 'escassez-de-parcerias',
         value: 'Escassez de parcerias',
       },
       {
-        name: 'escassez-de-voluntarios',
+        _id: 'escassez-de-voluntarios',
         value: 'Escassez de voluntários',
       },
       {
-        name: 'falta-de-colaboradores',
+        _id: 'falta-de-colaboradores',
         value: 'Falta de colaboradores',
       },
       {
-        name: 'falta-de-conhecimento',
+        _id: 'falta-de-conhecimento',
         value: 'Falta de conhecimento / clareza sobre o tema',
       },
       {
-        name: 'falta-de-planejamento-estrategico',
+        _id: 'falta-de-planejamento-estrategico',
         value: 'Falta de planejamento estratégico',
       },
       {
-        name: 'interesse-das-liderancas-da-org',
+        _id: 'interesse-das-liderancas-da-org',
         value: 'Interesse das lideranças da organização'
       },
     ]
   },
   {
-    name: 'fonte-de-dados',
+    _id: 'fonte-de-informação',
+    value: 'Fontes de informação',
+    _value: 'Quais as fontes de informação que sua organização utiliza com mais frequência?',
     options: [
       {
-        name: 'coleta-propria',
+        _id: 'coleta-propria',
         value: 'Coleto meus próprios dados em campo',
       },
       {
-        name: 'dados-municipais-abertos',
+        _id: 'dados-municipais-abertos',
         value: 'Dados municipais abertos',
       },
       {
-        name: 'IBGE',
+        _id: 'IBGE',
         value: 'IBGE'
       },
       {
-        name: 'jornais-revistas-blogs',
+        _id: 'jornais-revistas-blogs',
         value: 'Jornais, Revistas, Sites, Blogs',
       },
       {
-        name: 'legislacao',
+        _id: 'legislacao',
         value: 'Legislação',
       },
       {
-        name: 'midias-sociais',
+        _id: 'midias-sociais',
         value: 'Mídias Sociais (Facebook, Twitter, Medium)',
       },
       {
-        name: 'pesquisa-orig-destino',
+        _id: 'pesquisa-orig-destino',
         value: 'Pesquisa Origem e Destino',
       },
       {
-        name: 'trab-academicos',
+        _id: 'trab-academicos',
         value: 'Trabalhos acadêmicos'
       }
     ]
   }
 ];
+
+module.exports.forEach(function (q) {
+  q._type = 'question';
+
+  // temporary mapping to maintain compat with current ui
+  q.name = q._id;
+
+  q.options.forEach(function (opt) {
+    
+    // temporary mapping to maintain compat with current ui
+    opt.name = q._id + '--' + opt._id
+    opt._type = 'question-option'
+  })
+})
+
+console.log(JSON.stringify(module.exports, null , '\t'));
