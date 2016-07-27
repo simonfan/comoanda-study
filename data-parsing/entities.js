@@ -9,26 +9,7 @@ const slug = require('slug');
 // read the csv file
 const optionGroupings = require('./option-groupings');
 
-
-const BASIC_DATA_PICKERS = [
-  {
-    property: 'nome',
-    question: 'Qual o nome da organização da qual faz parte?',
-  },
-  {
-    property: 'estado',
-    question: 'Estado:',
-  },
-  {
-    property: 'cidade',
-    question: 'Cidade:',
-  },
-  {
-    property: 'ano',
-    question: 'Quando sua organização surgiu?',
-  }
-  
-];
+const simpleQuestions = require('./simple-questions');
 
 function findGroupingForValue(value) {
   return optionGroupings.find(function (g) {
@@ -47,10 +28,13 @@ function findOption(grouping, optionValue) {
 function Entity(columnNames, line) {
   // basic data
 
-  BASIC_DATA_PICKERS.forEach((picker) => {
+  simpleQuestions.forEach((question) => {
+
+    var get = question.get || function (v) { return v; };
+
     columnNames.forEach((colName, index) => {
-      if (picker.question === colName) {
-        this[picker.property] = line[index]
+      if (question._value === colName) {
+        this[question._id] = get(line[index]);
       }
     })
   });
@@ -95,6 +79,6 @@ module.exports = function (csvText, callback) {
 
     });
 
-    callback(entities);
+    callback(null, entities);
   });
 }
