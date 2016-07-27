@@ -26,8 +26,8 @@ function findOption(grouping, optionValue) {
 }
 
 function Entity(columnNames, line) {
-  // basic data
 
+  // basic data
   simpleQuestions.forEach((question) => {
 
     var get = question.get || function (v) { return v; };
@@ -35,8 +35,12 @@ function Entity(columnNames, line) {
     columnNames.forEach((colName, index) => {
       if (question._value === colName) {
         this[question._id] = get(line[index]);
+
+        if (!this[question._id]) {
+          console.warn('no value found for %s', question._id, this.nome);
+        }
       }
-    })
+    });
   });
   
   // find optionGroupings (colNames are values actually)
@@ -51,7 +55,13 @@ function Entity(columnNames, line) {
       }
     }
   });
-  
+
+  // ensure the entity has a value for each of the groupings
+  optionGroupings.forEach((grouping) => {
+    if (!this[grouping._id]) {
+      this[grouping._id] = [];
+    }
+  });
   
   // id
   this._id = slug(this.nome);
@@ -77,6 +87,12 @@ module.exports = function (csvText, callback) {
       
       return entity;
 
+    });
+
+    // filter out entities without 'estado' or 'ano'
+    entities = entities.filter(function (entity) {
+      return (typeof entity.estado === 'string' && entity.estado !== '') &&
+             (entity.ano && typeof entity.ano === 'number' && entity.ano !== NaN);
     });
 
     callback(null, entities);

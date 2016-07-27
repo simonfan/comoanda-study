@@ -33,13 +33,10 @@ module.exports = [
         _id: 'projetos',
         _value: 'Projetos e Planos [projetos de arquitetura, desenho urbano, planos de mobilidade, diretores]'
       },
-      
-      // we'll ignore other for now because
-      // it has the same value accross groupings
-      // {
-      //   _id: 'other',
-      //   value: 'Other',
-      // }
+      {
+        _id: 'other',
+        _value: 'Outros',
+      }
     ]
   },
   
@@ -80,10 +77,10 @@ module.exports = [
         _id: 'saude',
         _value: 'Saúde e qualidade de vida',
       },
-      // {
-      //   _id: 'other',
-      //   value: 'Other',
-      // }
+      {
+        _id: 'other',
+        _value: 'Outros',
+      }
     ]
   },
   
@@ -180,10 +177,10 @@ module.exports = [
         _id: 'nenhuma',
         _value: 'Nenhuma fonte de financiamento'
       },
-      // {
-      //   _id: 'other',
-      //   value: 'Other'
-      // }
+      {
+        _id: 'other',
+        _value: 'Outros',
+      }
     ]
   },
   
