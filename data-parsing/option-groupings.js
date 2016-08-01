@@ -1,5 +1,52 @@
 module.exports = [
   {
+    _id: 'aspectos-da-mobilidade',
+    label: 'Aspectos da mobilidade',
+    _value: 'Com quais aspectos da mobilidade a pé sua organização trabalha ou como o tema está inserido na sua atuação?',
+    options: [
+      {
+        _id: 'arquitetura-da-edificacao',
+        _value: 'Arquitetura da edificação [interface entre espaço público e lote privado; projeto na infraestrutura para mobilidade a pé]',
+      },
+      {
+        _id: 'bicicleta',
+        _value: 'Bicicleta [convívio entre mobilidade cicloviária e mobilidade a pé]',
+      },
+      {
+        _id: 'economia',
+        _value: 'Economia [impactos da mobilidade na economia; geração de emprego; análise de trade-off; fomento ao comércio local]'
+      },
+      {
+        _id: 'infraestrutura',
+        _value: 'Infraestrutura local [calçadas, cruzamentos, escadarias, passarelas, passagens subterrâneas, travessias, sinalização, mobiliário urbano]',
+      },
+      {
+        _id: 'meio-ambiente',
+        _value: 'Meio ambiente e sustentabilidade [mudanças climáticas, energia, emissão de gases, poluição, economia sustentável]'
+      },
+      {
+        _id: 'microacessibilidade',
+        _value: 'Microacessibilidade ao Transporte Público Coletivo [conectividade, intermodalidade]',
+      },
+      {
+        _id: 'planejamento-urbano',
+        _value: 'Planejamento e desenho urbano [uso e ocupação do solo, infraestrutura de transporte, planejamento na escala do bairro/cidade]',
+      },
+      {
+        _id: 'saude-e-qualidade-de-vida',
+        _value: 'Saúde e Qualidade de Vida [sedentarismo e doenças relacionadas, como obesidade, diabetes; problemas respiratórios; estresse e depressão]',
+      },
+      {
+        _id: 'seguranca',
+        _value: 'Segurança [pessoal, viária e acidentalidade vertical]'
+      },
+      {
+        _id: 'tecnologia-e-inovacao',
+        _value: 'Tecnologia e Inovação [aplicativos, rede e plataforma online, base de dados]'
+      }
+    ]
+  },
+  {
     _id: 'abordagem',
     label: 'Abordagem',
     _value: 'Qual a abordagem da sua organização sobre o tema da mobilidade a pé?',
@@ -39,7 +86,6 @@ module.exports = [
       }
     ]
   },
-  
   {
     _id: 'area',
     label: 'Área de atuação',
@@ -83,43 +129,59 @@ module.exports = [
       }
     ]
   },
-  
+
   {
-    _id: 'escala',
-    label: 'Escala de atuação',
-    _value: 'Para qual(is) escala(s) as ações da sua organização estão direcionadas?',
+    _id: 'dificuldades',
+    label: 'Principais dificuldades',
+    _value: 'Quais são as principais dificuldades que sua organização encontra para trabalhar com o tema da mobilidade a pé?',
     options: [
       {
-        _id: 'bairro',
-        _value: 'Bairro / comunidade',
+        _id: 'acesso-a-info',
+        _value: 'Acesso a informações',
       },
       {
-        _id: 'cidade',
-        _value: 'Cidade',
+        _id: 'apoio-politico',
+        _value: 'Apoio político',
       },
       {
-        _id: 'metropole',
-        _value: 'Regiões Metropolitanas (várias cidades)'
+        _id: 'financiamento',
+        _value: 'Ausência / escassez de recursos / financiamento',
       },
       {
-        _id: 'estado',
-        _value: 'Estado',
+        _id: 'burocracia',
+        _value: 'Burocracia / meios legais de atuar'
       },
       {
-        _id: 'regional',
-        _value: 'Vários Estados / Regional'
+        _id: 'capacitacao',
+        _value: 'Capacitação da equipe',
       },
       {
-        _id: 'nacional',
-        _value: 'Nacional',
+        _id: 'escassez-de-parcerias',
+        _value: 'Escassez de parcerias',
       },
       {
-        _id: 'internacional',
-        _value: 'Internacional'
-      }
+        _id: 'escassez-de-voluntarios',
+        _value: 'Escassez de voluntários',
+      },
+      {
+        _id: 'falta-de-colaboradores',
+        _value: 'Falta de colaboradores',
+      },
+      {
+        _id: 'falta-de-conhecimento',
+        _value: 'Falta de conhecimento / clareza sobre o tema',
+      },
+      {
+        _id: 'falta-de-planejamento-estrategico',
+        _value: 'Falta de planejamento estratégico',
+      },
+      {
+        _id: 'interesse-das-liderancas-da-org',
+        _value: 'Interesse das lideranças da organização'
+      },
     ]
   },
-  
+
   {
     _id: 'financiamento',
     label: 'Fontes de financiamento',
@@ -183,182 +245,51 @@ module.exports = [
       }
     ]
   },
-  
+
   {
-    _id: 'remuneracao',
-    label: 'Remuneração dos membros',
-    _value: 'Os membros da organização são:',
+    _id: 'finalidade-das-parcerias',
+    _value: 'Finalidade das parcerias',
     options: [
       {
-        _id: 'integral',
-        _value: 'Remunerados integralmente',
+        _id: 'apoio-financeiro',
+        _value: 'Apoio financeiro'
       },
       {
-        _id: 'parcial',
-        _value: 'Remunerados parcialmente',
-      },
-      {
-        _id: 'nao-remunerados',
-        _value: 'Não remunerados'
-      }
-    ]
-  },
-  
-  {
-    _id: 'midia',
-    label: 'Ferramentas de comunicação',
-    _value: 'Quais são as ferramentas utilizadas regularmente por sua organização para fins de divulgação e comunicação?',
-    options: [
-      {
-        _id: 'assessoria-de-imprensa',
-        _value: 'Assessoria de Imprensa',
-      },
-      {
-        _id: 'congressos-e-seminarios',
-        _value: 'Congressos e Seminários',
-      },
-      {
-        _id: 'email',
-        _value: 'E-mail / mailing / newsletter',
-      },
-      {
-        _id: 'facebook',
-        _value: 'Facebook'
-      },
-      {
-        _id: 'linkedin',
-        _value: 'LinkedIn'
-      },
-      {
-        _id: 'jornal',
-        _value: 'Jornal'
-      },
-      {
-        _id: 'publicacao-cientifica',
-        _value: 'Publicação científica'
-      },
-      {
-        _id: 'radio',
-        _value: 'Rádio',
-      },
-      {
-        _id: 'revista',
-        _value: 'Revista'
-      },
-      {
-        _id: 'site',
-        _value: 'Site'
-      },
-      {
-        _id: 'tv',
-        _value: 'TV'
-      },
-      {
-        _id: 'twitter',
-        _value: 'Twitter'
-      },
-      {
-        _id: 'youtube',
-        _value: 'YouTube'
-      }
-    ]
-  },
-  {
-    _id: 'aspectos-da-mobilidade',
-    label: 'Aspectos da mobilidade',
-    _value: 'Com quais aspectos da mobilidade a pé sua organização trabalha ou como o tema está inserido na sua atuação?',
-    options: [
-      {
-        _id: 'arquitetura-da-edificacao',
-        _value: 'Arquitetura da edificação [interface entre espaço público e lote privado; projeto na infraestrutura para mobilidade a pé]',
-      },
-      {
-        _id: 'bicicleta',
-        _value: 'Bicicleta [convívio entre mobilidade cicloviária e mobilidade a pé]',
-      },
-      {
-        _id: 'economia',
-        _value: 'Economia [impactos da mobilidade na economia; geração de emprego; análise de trade-off; fomento ao comércio local]'
-      },
-      {
-        _id: 'infraestrutura',
-        _value: 'Infraestrutura local [calçadas, cruzamentos, escadarias, passarelas, passagens subterrâneas, travessias, sinalização, mobiliário urbano]',
-      },
-      {
-        _id: 'meio-ambiente',
-        _value: 'Meio ambiente e sustentabilidade [mudanças climáticas, energia, emissão de gases, poluição, economia sustentável]'
-      },
-      {
-        _id: 'microacessibilidade',
-        _value: 'Microacessibilidade ao Transporte Público Coletivo [conectividade, intermodalidade]',
-      },
-      {
-        _id: 'planejamento-urbano',
-        _value: 'Planejamento e desenho urbano [uso e ocupação do solo, infraestrutura de transporte, planejamento na escala do bairro/cidade]',
-      },
-      {
-        _id: 'saude-e-qualidade-de-vida',
-        _value: 'Saúde e Qualidade de Vida [sedentarismo e doenças relacionadas, como obesidade, diabetes; problemas respiratórios; estresse e depressão]',
-      },
-      {
-        _id: 'seguranca',
-        _value: 'Segurança [pessoal, viária e acidentalidade vertical]'
-      },
-      {
-        _id: 'tecnologia-e-inovacao',
-        _value: 'Tecnologia e Inovação [aplicativos, rede e plataforma online, base de dados]'
-      }
-    ]
-  },
-  {
-    _id: 'dificuldades',
-    label: 'Principais dificuldades',
-    _value: 'Quais são as principais dificuldades que sua organização encontra para trabalhar com o tema da mobilidade a pé?',
-    options: [
-      {
-        _id: 'acesso-a-info',
-        _value: 'Acesso a informações',
+        _id: 'apoio-institucional',
+        _value: 'Apoio institucional',
       },
       {
         _id: 'apoio-politico',
-        _value: 'Apoio político',
+        _value: 'Apoio político'
       },
       {
-        _id: 'financiamento',
-        _value: 'Ausência / escassez de recursos / financiamento',
+        _id: 'pesquisas',
+        _value: 'Parceria para pesquisas'
       },
       {
-        _id: 'burocracia',
-        _value: 'Burocracia / meios legais de atuar'
+        _id: 'acoes',
+        _value: 'Parceria para ações',
       },
       {
-        _id: 'capacitacao',
-        _value: 'Capacitação da equipe',
+        _id: 'aprendizagem-capacitacao',
+        _value: 'Parceria para aprendizagem, capacitação ou treinamento'
       },
       {
-        _id: 'escassez-de-parcerias',
-        _value: 'Escassez de parcerias',
+        _id: 'campanhas',
+        _value: 'Parceria para campanhas',
       },
       {
-        _id: 'escassez-de-voluntarios',
-        _value: 'Escassez de voluntários',
+        _id: 'mobilizacao',
+        _value: 'Parceria para mobilização e sensibilização'
       },
       {
-        _id: 'falta-de-colaboradores',
-        _value: 'Falta de colaboradores',
+        _id: 'nao-temos-parceria',
+        _value: 'Não possuímos ações em parceria'
       },
       {
-        _id: 'falta-de-conhecimento',
-        _value: 'Falta de conhecimento / clareza sobre o tema',
-      },
-      {
-        _id: 'falta-de-planejamento-estrategico',
-        _value: 'Falta de planejamento estratégico',
-      },
-      {
-        _id: 'interesse-das-liderancas-da-org',
-        _value: 'Interesse das lideranças da organização'
-      },
+        _id: 'outros',
+        _value: 'Other',
+      }
     ]
   },
   {
@@ -399,7 +330,124 @@ module.exports = [
         _value: 'Trabalhos acadêmicos'
       }
     ]
-  }
+  },
+  {
+    _id: 'escala',
+    label: 'Escala de atuação',
+    _value: 'Para qual(is) escala(s) as ações da sua organização estão direcionadas?',
+    options: [
+      {
+        _id: 'bairro',
+        _value: 'Bairro / comunidade',
+      },
+      {
+        _id: 'cidade',
+        _value: 'Cidade',
+      },
+      {
+        _id: 'metropole',
+        _value: 'Regiões Metropolitanas (várias cidades)'
+      },
+      {
+        _id: 'estado',
+        _value: 'Estado',
+      },
+      {
+        _id: 'regional',
+        _value: 'Vários Estados / Regional'
+      },
+      {
+        _id: 'nacional',
+        _value: 'Nacional',
+      },
+      {
+        _id: 'internacional',
+        _value: 'Internacional'
+      }
+    ]
+  },
+  
+  
+  // {
+  //   _id: 'remuneracao',
+  //   label: 'Remuneração dos membros',
+  //   _value: 'Os membros da organização são:',
+  //   options: [
+  //     {
+  //       _id: 'integral',
+  //       _value: 'Remunerados integralmente',
+  //     },
+  //     {
+  //       _id: 'parcial',
+  //       _value: 'Remunerados parcialmente',
+  //     },
+  //     {
+  //       _id: 'nao-remunerados',
+  //       _value: 'Não remunerados'
+  //     }
+  //   ]
+  // },
+  
+  // {
+  //   _id: 'midia',
+  //   label: 'Ferramentas de comunicação',
+  //   _value: 'Quais são as ferramentas utilizadas regularmente por sua organização para fins de divulgação e comunicação?',
+  //   options: [
+  //     {
+  //       _id: 'assessoria-de-imprensa',
+  //       _value: 'Assessoria de Imprensa',
+  //     },
+  //     {
+  //       _id: 'congressos-e-seminarios',
+  //       _value: 'Congressos e Seminários',
+  //     },
+  //     {
+  //       _id: 'email',
+  //       _value: 'E-mail / mailing / newsletter',
+  //     },
+  //     {
+  //       _id: 'facebook',
+  //       _value: 'Facebook'
+  //     },
+  //     {
+  //       _id: 'linkedin',
+  //       _value: 'LinkedIn'
+  //     },
+  //     {
+  //       _id: 'jornal',
+  //       _value: 'Jornal'
+  //     },
+  //     {
+  //       _id: 'publicacao-cientifica',
+  //       _value: 'Publicação científica'
+  //     },
+  //     {
+  //       _id: 'radio',
+  //       _value: 'Rádio',
+  //     },
+  //     {
+  //       _id: 'revista',
+  //       _value: 'Revista'
+  //     },
+  //     {
+  //       _id: 'site',
+  //       _value: 'Site'
+  //     },
+  //     {
+  //       _id: 'tv',
+  //       _value: 'TV'
+  //     },
+  //     {
+  //       _id: 'twitter',
+  //       _value: 'Twitter'
+  //     },
+  //     {
+  //       _id: 'youtube',
+  //       _value: 'YouTube'
+  //     }
+  //   ]
+  // },
+
 ];
 
 module.exports.forEach(function (q) {

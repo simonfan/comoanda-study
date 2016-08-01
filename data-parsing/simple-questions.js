@@ -17,6 +17,16 @@ module.exports = [
     get: function (value) {
       return parseInt(value, 10);
     },
-  }
+  },
+
+  // FILTERABLE
+  // {
+  //   _id: 'formalização',
+  //   _value: 'Como vocês estão formalizados?',
+  // },
+  // {
+  //   _id: 'mobilidade-a-pe-e-foco',
+  //   _value: 'Mobilidade a pé é o foco principal da sua organização?',
+  // },
   
 ];
