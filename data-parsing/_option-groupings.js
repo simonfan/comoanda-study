@@ -257,43 +257,43 @@ module.exports = [
     _questionType: 'multi',
     options: [
       {
-        _id: 'parceria-apoio-financeiro',
+        _id: 'apoio-financeiro',
         _value: 'Apoio financeiro'
       },
       {
-        _id: 'parceria-apoio-institucional',
+        _id: 'apoio-institucional',
         _value: 'Apoio institucional',
       },
       {
-        _id: 'parceria-apoio-politico',
+        _id: 'apoio-politico',
         _value: 'Apoio político'
       },
       {
-        _id: 'parceria-pesquisas',
+        _id: 'pesquisas',
         _value: 'Parceria para pesquisas'
       },
       {
-        _id: 'parceria-acoes',
+        _id: 'acoes',
         _value: 'Parceria para ações',
       },
       {
-        _id: 'parceria-aprendizagem-capacitacao',
+        _id: 'aprendizagem-capacitacao',
         _value: 'Parceria para aprendizagem, capacitação ou treinamento'
       },
       {
-        _id: 'parceria-campanhas',
+        _id: 'campanhas',
         _value: 'Parceria para campanhas',
       },
       {
-        _id: 'parceria-mobilizacao',
+        _id: 'mobilizacao',
         _value: 'Parceria para mobilização e sensibilização'
       },
       {
-        _id: 'parceria-nao-temos-parceria',
+        _id: 'nao-temos-parceria',
         _value: 'Não possuímos ações em parceria'
       },
       {
-        _id: 'parceria-outros',
+        _id: 'outros',
         _value: 'Other',
       }
     ]
@@ -374,25 +374,88 @@ module.exports = [
       }
     ]
   },
-  {
-    _id: 'formalização',
-    _questionType: 'single-selection',
-    _value: 'Como vocês estão formalizados?',
-    options: [
-      {
-        _id: 'bairro',
-        _value: 'Bairro / comunidade',
-      },
-    ]
-  },
-  {
-    _id: 'mobilidade-a-pe-e-foco',
-    _questionType: 'single-selection',
-    _value: 'Mobilidade a pé é o foco principal da sua organização?',
-    options: [
+  
+  
+  // {
+  //   _id: 'remuneracao',
+  //   label: 'Remuneração dos membros',
+  //   _value: 'Os membros da organização são:',
+  //   options: [
+  //     {
+  //       _id: 'integral',
+  //       _value: 'Remunerados integralmente',
+  //     },
+  //     {
+  //       _id: 'parcial',
+  //       _value: 'Remunerados parcialmente',
+  //     },
+  //     {
+  //       _id: 'nao-remunerados',
+  //       _value: 'Não remunerados'
+  //     }
+  //   ]
+  // },
+  
+  // {
+  //   _id: 'midia',
+  //   label: 'Ferramentas de comunicação',
+  //   _value: 'Quais são as ferramentas utilizadas regularmente por sua organização para fins de divulgação e comunicação?',
+  //   options: [
+  //     {
+  //       _id: 'assessoria-de-imprensa',
+  //       _value: 'Assessoria de Imprensa',
+  //     },
+  //     {
+  //       _id: 'congressos-e-seminarios',
+  //       _value: 'Congressos e Seminários',
+  //     },
+  //     {
+  //       _id: 'email',
+  //       _value: 'E-mail / mailing / newsletter',
+  //     },
+  //     {
+  //       _id: 'facebook',
+  //       _value: 'Facebook'
+  //     },
+  //     {
+  //       _id: 'linkedin',
+  //       _value: 'LinkedIn'
+  //     },
+  //     {
+  //       _id: 'jornal',
+  //       _value: 'Jornal'
+  //     },
+  //     {
+  //       _id: 'publicacao-cientifica',
+  //       _value: 'Publicação científica'
+  //     },
+  //     {
+  //       _id: 'radio',
+  //       _value: 'Rádio',
+  //     },
+  //     {
+  //       _id: 'revista',
+  //       _value: 'Revista'
+  //     },
+  //     {
+  //       _id: 'site',
+  //       _value: 'Site'
+  //     },
+  //     {
+  //       _id: 'tv',
+  //       _value: 'TV'
+  //     },
+  //     {
+  //       _id: 'twitter',
+  //       _value: 'Twitter'
+  //     },
+  //     {
+  //       _id: 'youtube',
+  //       _value: 'YouTube'
+  //     }
+  //   ]
+  // },
 
-    ]
-  },
 ];
 
 module.exports.forEach(function (q) {
@@ -404,4 +467,6 @@ module.exports.forEach(function (q) {
     opt._id = q._id + '--' + opt._id
     opt._type = 'question-option'
   })
-});
+})
+
+// console.log(JSON.stringify(module.exports, null , '\t'));

@@ -7,12 +7,24 @@ const csv = require('csv');
 const slug = require('slug');
 
 // read the csv file
-const optionGroupings = require('./option-groupings');
+const questions = require('./questions');
 
-const simpleQuestions = require('./simple-questions');
+const textInputQuestions = questions.filter(function (q) {
+  return q._questionType === 'text-input';
+});
+const multiSelectionQuestions = questions.filter(function (q) {
+  return q._questionType === 'multi';
+});
+const singleSelectionQuestions = questions.filter(function (q) {
+  return q._questionType === 'single-selection';
+});
 
-function findGroupingForValue(value) {
-  return optionGroupings.find(function (g) {
+// console.log(textInputQuestions);
+// console.log(multiSelectionQuestions);
+// console.log(singleSelectionQuestions);
+
+function findQuestionForValue(value) {
+  return multiSelectionQuestions.find(function (g) {
     return g.options.find(function (opt) {
       return opt._value === value;
     });
@@ -28,7 +40,7 @@ function findOption(grouping, optionValue) {
 function Entity(columnNames, line) {
 
   // basic data
-  simpleQuestions.forEach((question) => {
+  textInputQuestions.forEach((question) => {
 
     var get = question.get || function (v) { return v; };
 
@@ -43,10 +55,10 @@ function Entity(columnNames, line) {
     });
   });
   
-  // find optionGroupings (colNames are values actually)
+  // find multiSelectionQuestions (colNames are values actually)
   columnNames.forEach((colName, index) => {
     if (line[index]) {
-      var grouping = findGroupingForValue(colName);
+      var grouping = findQuestionForValue(colName);
       
       if (grouping) {
         this[grouping._id] = this[grouping._id] || [];
@@ -57,7 +69,7 @@ function Entity(columnNames, line) {
   });
 
   // ensure the entity has a value for each of the groupings
-  optionGroupings.forEach((grouping) => {
+  multiSelectionQuestions.forEach((grouping) => {
     if (!this[grouping._id]) {
       this[grouping._id] = [];
     }

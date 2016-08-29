@@ -380,28 +380,116 @@ module.exports = [
     _value: 'Como vocês estão formalizados?',
     options: [
       {
-        _id: 'bairro',
-        _value: 'Bairro / comunidade',
+        _id: 'associacao',
+        _value: "Associação",
       },
-    ]
+      {
+        _id: 'coletivo',
+        _value: "Coletivo",
+      },
+      {
+        _id: 'comissao',
+        _value: "Comissão",
+      },
+      {
+        _id: 'comite',
+        _value: "Comite",
+      },
+      {
+        _id: 'empresa',
+        _value: "Empresa",
+      },
+      {
+        _id: 'fundacao',
+        _value: "Fundação",
+      },
+      {
+        _id: 'instituto',
+        _value: "Instituto",
+      },
+      {
+        _id: 'orgao-publico',
+        _value: "orgao publico",
+      },
+      {
+        _id: 'rede',
+        _value: "rede",
+      },
+      {
+        _id: 'movimento-social',
+        _value: "Movimento Social",
+      },
+      {
+        _id: 'os',
+        _value: "Organizacao Social",
+      },
+      {
+        _id: 'oscip',
+        _value: "OSCIP",
+      },
+      {
+        _id: 'universidade-grupo-pesquisa',
+        _value: "universidade",
+      },
+      {
+        _id: 'em-processo',
+        _value: "Em processo de formalização",
+      },
+      {
+        _id: 'nao-formalizado',
+        _value: "nao formalizado",
+      },
+      {
+        _id: 'outro',
+        _value: "outro",
+      }
+    ],
   },
   {
     _id: 'mobilidade-a-pe-e-foco',
     _questionType: 'single-selection',
     _value: 'Mobilidade a pé é o foco principal da sua organização?',
     options: [
-
-    ]
+      {
+        _id: 'mobilidade-a-pe',
+        _value: "Mobilidade a pé principalmente",
+      },
+      {
+        _id: 'mobilidade-a-pe-dentre-outros',
+        _value: "Mobilidade a pé dentre outros temas",
+      },
+      {
+        _id: 'mobilidade-ape-outros',
+        _value: "Outros temas",
+      }
+    ],
+  },
+  {
+    _id: 'nome',
+    _value: 'Qual o nome da organização da qual faz parte?',
+    _questionType: 'text-input',
+  },
+  {
+    _id: 'estado',
+    _value: 'Estado:',
+    _questionType: 'text-input',
+  },
+  {
+    _id: 'cidade',
+    _value: 'Cidade:',
+    _questionType: 'text-input',
   },
 ];
 
 module.exports.forEach(function (q) {
   q._type = 'question';
 
-  q.options.forEach(function (opt) {
-    
-    // temporary mapping to maintain compat with current ui
-    opt._id = q._id + '--' + opt._id
-    opt._type = 'question-option'
-  })
+  if (q._questionType === 'single-selection' || q._questionType === 'multi') {
+    q.options.forEach(function (opt) {
+      
+      // temporary mapping to maintain compat with current ui
+      opt._id = q._id + '--' + opt._id
+      opt._type = 'question-option'
+    })
+  }
 });
